@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car price prediction</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href="static\style.css">
+</head>
+<body>
+    <div class="maindiv">
+        <nav style="background-col or: rgb(81, 170, 233);">
+            CAR PRICE PREDICTION
+            
+        </nav>
+        <form class="form-group" action ="{{url_for('prediction')}}" method="POST">       
+            Car <span style="color: rgb(77, 235, 253);">Name</span> : 
+            <select name="CarName" id="CarName" style="text-align:center;" class="elements" mutiple>
+                <option value="0" >alfa-romeo</option>
+                <option value="19" data-img-src="alfa-romeo.jpg">Toyota</option>
+                <option value="12">Nissan</option>
+                <option value="8">Mazda</option>
+                <option value="11">Mitsubishi</option>
+                <option value="5">honda</option>
+                <option value="20">volkswagen</option>
+                <option value="18">subaru</option>
+                <option value="13">peugeot</option>
+                <option value="21">volvo</option>
+                <option value="4">Dodge</option>
+                <option value="9">Buick</option>
+                <option value="2">BMW</option>
+                <option value="1">Audi</option>
+                <option value="14">plymouth</option>
+                <option value="17">saab</option>
+                <option value="15">porsche</option>
+                <option value="6">Isuzu</option>
+                <option value="7">jaguar</option>
+                <option value="3">cherolet</option>
+                <option value="16">Renault</option>
+                <option value="10">Mercury</option>
+            </select>
+            </br>
+            Fuel <span style="color: rgb(77, 235, 253);">type</span>  : 
+            <select name="fueltype" id="fueltype" class="elements" mutiple>
+                <option value="0">gas</option>
+                <option value="1">diesel</option>
+            </select>
+            </br>
+            Aspiration :
+            <select name="aspiration" id="aspiration" class="elements" mutiple>
+                <option value="0">std</option>
+                <option value="1">turbo</option>
+            </select>
+            </br>
+            No Of <span style="color: rgb(77, 235, 253);"> Doors</span> :
+            <select name="doornumber" id="doornumber" class="elements" mutiple>
+                <option value="0">Two</option>
+                <option value="1">Four</option>
+            </select>
+            </br>
+            car <span style="color: rgb(77, 235, 253);"> Body</span> :
+            <select name="carbody" id="carbody" class="elements" mutiple>
+                <option value="0">convertible</option>
+                <option value="2">sedan</option>
+                <option value="1">hatchback</option>
+                <option value="3">wagon</option>
+                <option value="4">hardtop</option>
+                
+            </select>
+                
+            </br>
+            Drive  <span style="color: rgb(77, 235, 253);"> Wheels</span> :  
+            <select name="drivewheel" id="drivewheel" class="elements" mutiple>
+              <option value="0">Front Wheel</option>
+              <option value="1">Rear Wheel</option>
+              <option value="2">Four Wheel</option>
+            </select>
+            </br>
+            Engine <span style="color: rgb(77, 235, 253);"> Location</span> :
+            <select name="enginelocation" id="enginelocation" class="elements" mutiple>
+                <option value="0">front</option>
+                <option value="1">rear</option>
+            </select>
+            </br>
+            <div>
+            <label for="wheelbase">Wheel <span style="color: rgb(77, 235, 253);"> Base</span>: </label>     
+            <input id="mySlider"  type="range" name ="wheelbase" value="90" class="elements2" min="85" max="120" >
+            <div id="result">90</div>
+            (<B>Wheel Base</B> is the distance between the centre of the front wheels and the centre of the rear wheels)
+            </br>
+            <label for="carlength">car <span style="color: rgb(77, 235, 253);"> length</span>: </label>
+            <input id="mySlider1" type="range" name ="carlength" class="elements2" min="150" max="200" value="160">
+            <div id="result1">160</div>
+            <script>
+                mySlider1.oninput = showSliderValue;
+                function showSliderValue() {
+                    result1.innerText = this.value;
+                }   
+            </script>
+            </br>
+            <label for="carwidth">car<span style="color: rgb(77, 235, 253);"> width </span>: </label>
+            <input id="mySlider2" type="range" name ="carwidth" class="elements2" min="55" max="75" value="55">
+            <div id="result2">55</div>
+            <script>
+                mySlider2.oninput = showSliderValue;
+                function showSliderValue() {
+                    result2.innerText = this.value;
+                }   
+            </script>
+            </br>
+            <label for="carheight">car<span style="color: rgb(77, 235, 253);"> height </span> : </label>
+            <input id="mySlider3" type="range" value="50"  name ="carheight" class="elements2" min="50"max="60">
+            <div id="result3">50</div>
+            <script>
+                mySlider3.oninput = showSliderValue;
+                function showSliderValue() {
+                    result3.innerText = this.value;
+                }   
+            </script>
+            </br>
+            <label for="curbweight">curb <span style="color: rgb(77, 235, 253);"> weight </span>: </label>
+            <input id="mySlider4" type="range"  value="2000" name ="curbweight" class="elements2" min="1500" max = "4000" >
+            <div id="result4">2000</div>
+            <script>
+                mySlider4.oninput = showSliderValue;
+                function showSliderValue() {
+                    result4.innerText = this.value;
+                }   
+            </script>
+            </br>
+            </div>
+            Engine<span style="color: rgb(77, 235, 253);"> Type </span> :
+            <select name="enginetype" id="enginetype" class="elements" mutiple>
+                <option value="0">dohc</option>
+                <option value="2">ohc</option>
+                <option value="5">ohcf</option>
+                <option value="1">ohcv</option>
+                <option value="3">l</option>
+                <option value="4">rotor</option>
+                <option value="6">dohcv</option>
+                
+            </select>
+            </br>
+            Cylinder<span style="color: rgb(77, 235, 253);"> Number </span> : 
+            <select name="cylindernumber" id="cylindernumber" class="elements" mutiple>
+                   <option value="0">Four</option>
+                   <option value="1">six</option>
+                   <option value="2">Five</option>
+                   <option value="6">eight</option>
+                   <option value="5">Two</option>
+                   <option value="3">Three</option>
+                   <option value="4">Tweleve</option>
+            </select>
+            <br>
+            <label for="enginesize">Engine <span style="color: rgb(77, 235, 253);"> Size </span>: </label>
+            <input id="my" type="range" name ="enginesize" class="elements2" min="70" max = "330" value="100">
+            <div id="result0">100</div>
+            <script>
+                my.oninput = showSliderValue;
+                function showSliderValue() {
+                    result0.innerText = this.value;
+                }   
+            </script> 
+            </br>
+
+            Fuel<span style="color: rgb(77, 235, 253);"> System </span> :
+            <select name="fuelsystem" id="fuelsystem" class="elements" mutiple>
+                <option value="0">mpfi</option>
+                <option value="1">2bbl</option>
+                <option value="6">idi</option>
+                <option value="3">1bbl</option>
+                <option value="7">spdi</option>
+                <option value="5">4bbl</option>
+                <option value="2">mfi</option>
+                <option value="4">spfi</option>
+            </select>
+                  <br>
+            <label for="boreratio">Bore<span style="color: rgb(77, 235, 253);"> ratio </span> : </label>
+            <input id="mySlider5" type="range" min="2" max="4" name ="boreratio" class="elements2" value="3">
+            <div id="result5">3</div>
+            (Bore-Stroke Ratio is the ratio between the dimensions of the engine cylinder bore diameter to its piston stroke-length)
+            <script>
+                mySlider5.oninput = showSliderValue;
+                function showSliderValue() {
+                    result5.innerText = this.value;
+                }   
+            </script>
+            </br>
+            <label for="horsepower">horse<span style="color: rgb(77, 235, 253);">power</span> : </label>
+            <input id="mySlider6" type="range" name ="horsepower" class="elements2" min="55"max="500" value="150">
+            <div id="result6">150</div>
+            <script>
+                mySlider6.oninput = showSliderValue;
+                function showSliderValue() {
+                    result6.innerText = this.value;
+                }   
+            </script>
+            </br>
+            <label for="citympg">city<span style="color: rgb(77, 235, 253);">mpg</span> : </label>
+            <input id="mySlider7" type="range" name ="citympg" class="elements2" min="15" max="50" value="20">
+            <div id="result7">20</div>
+            <script>
+                mySlider7.oninput = showSliderValue;
+                function showSliderValue() {
+                    result7.innerText = this.value;
+                }   
+            </script>
+            </br>
+             
+            <label for="highwaympg">highway<span style="color: rgb(77, 235, 253);">mpg</span> : </label>
+            <input id="mySlider8" type="range" name ="highwaympg" class="elements2" min="15" max = "60" value="25" >
+            <div id="result8">25</div>
+            <script>
+                mySlider8.oninput = showSliderValue;
+                function showSliderValue() {
+                    result8.innerText = this.value;
+                }   
+            </script>         
+            </br>         
+            <button type="submit" name="submit" class = "btn">Submit</button>
+        
+        </form>
+        The price of the car is : {{prediction}} $
+      
+          <br>
+          <br>
+
+         ⭕ The Above model is predicted using <b>LinearRegression</b> and got accuracy of <span style="color: red;">92.5%</span> <br>
+         ⭕ To know more about the Dataset <b>CLICK THE LINK : </b><a href="https://drive.google.com/file/d/1lJYuVbJnzKy5rDShFW-Nk86qzUUgizqx/view?usp=share_link">About</a>
+                                          <p> CREATED BY SANJAY</p>
+                                            <a href="https://www.linkedin.com/in/sanjay-r-64687a228">LinkedIn</a>         <a href="https://github.com/Sanjay030303">GitHub</a>
+       
+    </div>
+       
+    <script>
+        mySlider.oninput = showSliderValue;
+        function showSliderValue() {
+            result.innerText = this.value;
+        }   
+    </script>
+    
+</body>
+</html>

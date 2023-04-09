@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-element">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('home') }}">Predict</a></li>
+                <li><a href="https://www.kaggle.com/rockbottom73/crude-oil-prices" target="_blank">Dataset</a></li>            
+                <li><a href="https://colab.research.google.com/drive/1ZJp_e7eyLG4HT0bbbQIhHut4tdQ57eFG?usp=sharing" target="_blank">Notebook</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="header">
+            <h1>Crude Oil Prediction</h1>
+        </div>
+        <div class="content">
+            <div>
+                <p>Demand for oil is inelastic, therefore the rise in price is good news for producers because they
+                    will see
+                    an increase in their revenue. Oil importers, however,will experience increased costs of purchasing
+                    oil.
+                    Because oil is the largest traded commodity, the effects are quite significant. A rising oil price
+                    can
+                    even shift economic/political power from oil importers to oil exporters. The crude oil price
+                    movements
+                    are subject to diverse influencing factors.Crude oil price prediction is a topic of great interest for investors, economists, and governments. The price of crude oil is affected by a variety of factors, such as global supply and demand, geopolitical events, and weather patterns. Many techniques have been developed to predict the price of crude oil, including statistical models, machine learning algorithms, and neural networks.
+
+                    One popular approach is the use of technical analysis, which involves analyzing past price trends and using this information to predict future prices. This approach relies on the assumption that history repeats itself, and that patterns observed in the past can help predict future prices.
+                    
+                    Another approach is fundamental analysis, which involves analyzing economic and market data to identify trends that may affect the price of crude oil. This includes factors such as changes in production levels, global demand, and geopolitical tensions.
+                    Long Short-Term Memory (LSTM) is a type of recurrent neural network (RNN) that has been widely used for time series prediction, including crude oil price prediction. LSTMs are particularly well-suited for modeling time series data because they are able to capture long-term dependencies and can process sequences of data with varying lengths.
+
+                    In crude oil price prediction, LSTM models are trained on historical price data to learn patterns and trends in the data. The model is then used to make predictions on future prices. The input data for the LSTM model typically includes historical crude oil prices, as well as other factors that may affect the price, such as global production levels, economic indicators, and geopolitical events.
+
+                    One advantage of using LSTMs for crude oil price prediction is that they are able to capture complex patterns in the data that may be missed by traditional statistical models. Additionally, LSTMs are able to handle noisy and incomplete data, making them a useful tool for dealing with the inherent uncertainties in crude oil price forecasting.
+
+                    However, one challenge with using LSTMs for crude oil price prediction is that the models can be complex and require a large amount of training data to be effective. Additionally, the accuracy of the models can be affected by changes in market conditions or unforeseen events, making it important to continually update and refine the models as new data becomes available.</p>
+            </div>
+        </div>
+        <h1 style="text-align: center;color: white;">Done by Sanjay and Praveen Kumar</h1>
+    </main>
+</body>
+
+</html>

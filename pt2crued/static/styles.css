@@ -1,0 +1,88 @@
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    background: whitesmoke;
+    opacity: 0.6;
+    border-radius: 20px;
+    margin:3px 10px;
+    display:flex;
+    padding:10px;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+h1{
+    font-size: 50px;
+    color:aliceblue
+}
+li{
+    list-style: none;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    cursor: pointer;
+    color: blue;
+}
+body{
+    background-image:url('3.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+}
+.nav-element>ul{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+form{
+    display: flex;
+    color:whitesmoke;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+label{
+    font-size: 30px;
+}
+input{
+    margin: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+button{
+    padding: 10px;
+    width:100px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: whitesmoke;
+    opacity: 0.6;
+}
+p{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    text-size-adjust: 12px;
+}

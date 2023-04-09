@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crude Oil Price Prediction</title>
+    <link rel="stylesheet" href="static\styles.css">
+  </head>
+  <body>
+    <nav>
+      <div class="nav-element">
+          <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('home') }}">Predict</a></li>
+            <li><a href="https://www.kaggle.com/rockbottom73/crude-oil-prices" target="_blank">Dataset</a></li>            
+            <li><a href="https://colab.research.google.com/drive/1ZJp_e7eyLG4HT0bbbQIhHut4tdQ57eFG?usp=sharing" target="_blank">Notebook</a></li>
+          </ul>
+      </div>
+  </nav>
+    <h1>Crude Oil Price Prediction</h1>
+    <form action="{{ url_for('predict') }}" method="post">
+      <label for="last_10_days">Enter the crude oil prices for the last 10 days separated by commas:</label>
+      <input type="text" id="last_10_days" name="last_10_days" required>
+      <br>
+      {% if error %}
+        <p style="color: red;">{{ error }}</p>
+      {% endif %}
+      <br>
+      <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+      <p style="font-color:white"><center style="color: white;">The predicted crude oil price for the next day is $ <span style="color: greenyellow;">{{ prediction }}</span></center></p>
+    {% endif %}
+  </body>
+</html>

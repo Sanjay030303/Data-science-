@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image:url('tom-barrett-zbai2Y1GBIw-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+}
+h1{
+    font-size: 50px;
+}
+nav{
+    background: whitesmoke;
+    opacity: 0.6;
+    border-radius: 20px;
+    margin:3px 10px;
+    display:flex;
+    padding:10px;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.nav-element>ul{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+li{
+    list-style: none;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    cursor: pointer;
+    color: blue;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+p{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+    color: white;
+    padding:20px;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    margin-top: 80px;
+}
